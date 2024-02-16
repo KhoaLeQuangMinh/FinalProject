@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home page 
+{% endblock %}
+
+{% block main %}
+    Your weight: {{weight}}
+    Your height: {{height}}
+    Your age: {{age}}
+    Your gender: {{gender}}
+    <br>
+    Your Basal Metabolic Rate is: {{BMR[0]}}
+
+    <p>
+        <form action = "/tdee" method = "post">
+            <select name = "lifestyle" >
+                <option disabled selected>Lifestyle</option>
+                {% for lifestyle in LIFESTYLES %}
+                    <option value = "{{lifestyle}}">{{lifestyle}}</option>
+                {% endfor %}
+            </select>
+            <button type = "submit">Enter</button>
+        </form>
+    </p>
+{% endblock %}

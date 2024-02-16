@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    TDEE Result
+{% endblock %}
+
+{% block main %}
+    Your Total Daily Energy Expenditure is: {{tdee}}
+    <form action = "/add">
+        <input name = "food" type = "text" placeholder = "What did you eat">
+        <button type = "submit" >Enter</button>
+    </form>
+
+{% endblock %}

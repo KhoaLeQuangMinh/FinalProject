@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Account
+{% endblock %}
+
+{% block main %}
+    <form action = "/account" method = "post">
+        <input name = "name" type = "text" placeholder ="Name">
+        <br>
+        <input name = "pass" type = "password" placeholder ="Password">
+        <br>
+        <button type = "submit">Create</button>
+    </form>
+{% endblock %}

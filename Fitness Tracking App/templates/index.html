@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+{% block title %}
+    TDEE Calculator
+{% endblock %}
+{% block main %}
+    {% if session["name"] %}
+        <div>
+            TDEE CALCULATOR
+        </div>
+        <h1> You are logged in as {{session["name"]}}</h1>
+        <form action="/bmr" , method="get">
+            <label for="weight">Enter your weight</label>
+            <input type="number" placeholder="Your weight (kg)" name="weight" id="weight">
+            <br>
+            <label for="height">Enter your height</label>
+            <input type="number" placeholder="Your height (cm)" name="height" id="height">
+            <br>
+            <label for="age">Enter your age</label>
+            <input type="number" placeholder="Your age" name="age" id="age">
+            <br>
+            <input type="radio" id="male" name="gender" value ="male">
+            <label for="male">Male</label>
+            <br>
+            <input type="radio" id="female" name="gender" value ="female">
+            <label for="female">Female</label>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <a href = "/logout">Log out</a>
+    {% else %}
+        You are not logged in. <a href="/login">Log in</a>
+    {% endif %}
+
+{% endblock %}
